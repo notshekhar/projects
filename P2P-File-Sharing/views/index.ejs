@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Share files</title>
+        <link
+            rel="shortcut icon"
+            type="image/png"
+            href="./images/icons/icon-72x72.png"
+        />
+        <script src="./js/peerjs.min.js"></script>
+        <script src="./js/socket.io.js"></script>
+        <link rel="manifest" href="./manifest.webmanifest" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        />
+        <script src="./js/qrcode.min.js"></script>
+        <script>
+            //install service worker
+
+            // Check that service workers are supported
+            if ("serviceWorker" in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker.register("./sw.js")
+                })
+            }
+        </script>
+        <script>
+            const ROOM_ID = "<%= id %>"
+        </script>
+    </head>
+    <body>
+        <div class="n_message"></div>
+        <div class="share">
+            <div class="close"></div>
+            <div class="wrap">
+                <div class="cancel">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="title">
+                    To connect to your network and start copying files, scan the
+                    QR code below, open the URL on another device,
+                </div>
+                <div class="qr_url">
+                    <div class="qr"></div>
+                    <div class="url">
+                        <input type="text" readonly />
+                        <button>Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new_message">
+            <i class="fas fa-envelope-square"></i>
+        </div>
+        <div class="root">
+            <div class="share_file_container">
+                <div class="connected-users">
+                    <div class="addUsers">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="title">Connected Users</div>
+                    <div class="waiting">Waiting for user to connect....</div>
+                    <div class="users"></div>
+                </div>
+                <div class="send">
+                    <div class="drop_file">
+                        <input type="file" />
+                        <div class="icon"><i class="fas fa-plus"></i></div>
+                        <div>
+                            Drag and Drop File or
+                            <span class="browse">Browse</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="history"></div>
+            </div>
+            <div class="chat">
+                <div class="hideChat">
+                    <i class="fas fa-times"><span> Close Chat</span></i>
+                </div>
+                <div class="body"></div>
+                <div class="input">
+                    <input type="text" placeholder="Enter a Text" />
+                    <button><i class="fas fa-2x fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="module" src="./js/index.js"></script>
+</html>
