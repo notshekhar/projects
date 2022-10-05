@@ -1,0 +1,15 @@
+name: P2P file sharing app
+tags: ["Backend", "WebRTC", "JS"]
+starter-files: https://github.com/notshekhar/P2P-File-Sharing
+type: WebRTC
+demo: https://dropall.herokuapp.com/
+level: medium
+cover-image: https://raw.githubusercontent.com/notshekhar/P2P-File-Sharing/master/Screenshot%202022-10-05%20at%2017.55.52.png
+short-description: This app can be use to share file peer 2 peer using webrtc.
+long-description: You can create link and share it with other to connect with your device and start sharing files or texts
+# https://codedamn.com/projects specfic section
+codedamn:
+    helper-learning-path: WebRTC
+    show-community-banner: true
+    playground-layout: terminal-editor
+    playground-image: ethereum-v1
